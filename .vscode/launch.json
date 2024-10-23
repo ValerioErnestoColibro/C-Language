@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(gdb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/a.exe", // Percorso del tuo eseguibile
+      "args": [], // Parametri opzionali
+      "stopAtEntry": false, // False se non vuoi fermarti all'inizio del programma
+      "cwd": "${workspaceFolder}", // Cartella di lavoro
+      "environment": [],
+      "externalConsole": true, // Usa la console esterna
+      "MIMode": "gdb", // Usa GDB per il debugging
+      "miDebuggerPath": "C:/MinGW/bin/gdb.exe", // Percorso di GDB (assicurati che sia corretto)
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build", // Task che compila il codice prima di fare debug
+      "internalConsoleOptions": "neverOpen",
+      "filterStderr": true,
+      "filterStdout": false
+    }
+  ]
+}
