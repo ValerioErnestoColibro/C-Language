@@ -1,16 +1,32 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+int main() {
+    int lato, i, j;
 
-int main(int argc, char *argv[]) {
-	int i, j;
-	for(i=0; i<6; i++){
-		for(j=0; j<5; j++){
-			printf("%c",j+65);
-		}
-		printf("\n");
-	}
-	
-	return 0;
+    printf("Inserisci la dimensione del lato del quadrato: ");
+    scanf("%d", &lato);
+
+    // Quadrato pieno
+    printf("Quadrato pieno:\n");
+    for (i = 0; i < lato; i++) { /*Scandisce le righe*/
+        for (j = 0; j < lato; j++) { /*Scandisce le colonne*/
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    // Quadrato vuoto
+    printf("Quadrato vuoto:\n");
+    for (i = 0; i < lato; i++) { /*Scandisce le righe*/
+        for (j = 0; j < lato; j++) { /*Scandisce le colonne*/
+            if (i == 0 || i == lato - 1 || j == 0 || j == lato - 1) { /* "i" se siamo nella prima colonna, "j" se siamo nella seconda colonna*/
+                printf("* ");
+            } else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
 }
